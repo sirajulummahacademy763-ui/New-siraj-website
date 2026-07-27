@@ -4,7 +4,7 @@
    Authentication Script
 ========================================== */
 
-const SCRIPT_URL = "  https://script.google.com/macros/s/AKfycbw0VoCQwYj3f0FUe5oo3iZ1qP3HiZYz6q1fsrkXlxwG-apic1bejaNurrFs0IcLzm8i/exec ";
+const SCRIPT_URL = "  https://script.google.com/macros/s/AKfycbw0VoCQwYj3f0FUe5oo3iZ1qP3HiZYz6q1fsrkXlxwG-apic1bejaNurrFs0IcLzm8i/exec";
 
 const registerForm = document.getElementById("registerForm");
 const message = document.getElementById("message");
