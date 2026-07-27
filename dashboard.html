@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Student Dashboard</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.css" rel="stylesheet">
+
+<link rel="stylesheet" href="assets/css/custom.css">
+
+</head>
+
+<body class="bg-light">
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-success">
+
+<div class="container">
+
+<a class="navbar-brand fw-bold">
+
+سراج الأمة الإسلامية
+
+</a>
+
+<button class="btn btn-warning" id="logoutBtn">
+
+Logout
+
+</button>
+
+</div>
+
+</nav>
+
+<div class="container py-5">
+
+<div class="row">
+
+<div class="col-lg-4 mb-4">
+
+<div class="card shadow">
+
+<div class="card-body text-center">
+
+<img
+
+src="assets/images/avatar.png"
+
+width="120"
+
+class="rounded-circle mb-3">
+
+<h3 id="studentName">
+
+Student
+
+</h3>
+
+<p class="text-muted">
+
+Islamic Student
+
+</p>
+
+</div>
+
+</div>
+
+<div class="card shadow mt-4">
+
+<div class="card-body">
+
+<h5>
+
+Wallet
+
+</h5>
+
+<hr>
+
+<h1 class="text-success">
+
+🪙
+
+<span id="coinBalance">
+
+0
+
+</span>
+
+</h1>
+
+<a
+
+href="wallet.html"
+
+class="btn btn-success w-100 mt-3">
+
+Buy Coins
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-lg-8">
+
+<div class="card shadow mb-4">
+
+<div class="card-body">
+
+<h3>
+
+Welcome Back,
+
+<span id="welcomeName">
+
+Student
+
+</span>
+
+</h3>
+
+<p>
+
+Continue your Islamic learning journey.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="row">
+
+<div class="col-md-6 mb-4">
+
+<div class="card shadow h-100">
+
+<div class="card-body">
+
+<h4>
+
+📖 Qur'an
+
+</h4>
+
+<p>
+
+Continue reading the Noble Qur'an.
+
+</p>
+
+<a
+
+href="library.html"
+
+class="btn btn-outline-success">
+
+Continue
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-md-6 mb-4">
+
+<div class="card shadow h-100">
+
+<div class="card-body">
+
+<h4>
+
+📚 Courses
+
+</h4>
+
+<p>
+
+View your enrolled courses.
+
+</p>
+
+<a
+
+href="courses.html"
+
+class="btn btn-outline-success">
+
+Open
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-md-6 mb-4">
+
+<div class="card shadow h-100">
+
+<div class="card-body">
+
+<h4>
+
+📈 Progress
+
+</h4>
+
+<div class="progress">
+
+<div
+
+class="progress-bar bg-success"
+
+style="width:30%;">
+
+30%
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-md-6 mb-4">
+
+<div class="card shadow h-100">
+
+<div class="card-body">
+
+<h4>
+
+🔔 Notifications
+
+</h4>
+
+<ul>
+
+<li>
+
+Welcome to Sirajul Ummatul Islamiyah.
+
+</li>
+
+<li>
+
+New Qur'an lessons available.
+
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+const token=localStorage.getItem("sessionToken");
+
+if(!token){
+
+window.location.href="login.html";
+
+}
+
+document.getElementById("studentName").innerText=
+
+localStorage.getItem("studentName");
+
+document.getElementById("welcomeName").innerText=
+
+localStorage.getItem("studentName");
+
+document.getElementById("coinBalance").innerText=
+
+localStorage.getItem("coins");
+
+document.getElementById("logoutBtn").addEventListener("click",()=>{
+
+localStorage.clear();
+
+window.location.href="login.html";
+
+});
+
+</script>
+
+</body>
+
+</html>
