@@ -1,1 +1,144 @@
 
+/* ======================================
+   Sirajul Ummatul Islamiyah Theme
+====================================== */
+
+:root{
+    --primary:#0B5D3B;
+    --secondary:#D4AF37;
+    --dark:#1d1d1d;
+    --light:#f8f9fa;
+}
+
+body{
+    font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+    background:#f8f9fa;
+    color:#333;
+}
+
+/* Navbar */
+
+.navbar{
+    transition:.3s;
+}
+
+.navbar-brand{
+    font-size:1.5rem;
+    font-weight:bold;
+}
+
+/* Hero */
+
+.hero{
+    background:linear-gradient(rgba(11,93,59,.85),rgba(11,93,59,.85)),
+    url("../images/hero.jpg");
+    background-size:cover;
+    background-position:center;
+    min-height:85vh;
+    display:flex;
+    align-items:center;
+}
+
+.hero h1{
+    font-weight:700;
+}
+
+.hero p{
+    max-width:700px;
+    margin:auto;
+}
+
+/* Buttons */
+
+.btn-warning{
+    background:var(--secondary);
+    border:none;
+    color:#222;
+    font-weight:600;
+}
+
+.btn-warning:hover{
+    background:#b8931f;
+    color:white;
+}
+
+.btn-outline-light:hover{
+    color:var(--primary);
+}
+
+/* Cards */
+
+.card{
+    border:none;
+    border-radius:18px;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 15px 35px rgba(0,0,0,.15);
+}
+
+.card i{
+    color:var(--primary);
+}
+
+/* Sections */
+
+section{
+    padding-top:70px;
+    padding-bottom:70px;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.section-title h2{
+    color:var(--primary);
+    font-weight:700;
+}
+
+/* Footer */
+
+footer{
+    background:#111827;
+}
+
+footer p{
+    margin:0;
+}
+
+/* Smooth animation */
+
+.fade-up{
+    opacity:0;
+    transform:translateY(30px);
+    transition:.8s;
+}
+
+.fade-up.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* Back To Top */
+
+#backTop{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    display:none;
+    border:none;
+    background:var(--primary);
+    color:white;
+    z-index:999;
+}
+
+#backTop:hover{
+    background:#08462d;
+}
