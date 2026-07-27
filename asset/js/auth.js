@@ -87,3 +87,85 @@ console.error(error);
 });
 
 }
+
+/* ===========================
+LOGIN
+=========================== */
+
+const loginForm=document.getElementById("loginForm");
+
+if(loginForm){
+
+loginForm.addEventListener("submit",async function(e){
+
+e.preventDefault();
+
+const email=document.getElementById("loginEmail").value.trim();
+
+const password=document.getElementById("loginPassword").value;
+
+const message=document.getElementById("loginMessage");
+
+try{
+
+const response=await fetch(SCRIPT_URL,{
+
+method:"POST",
+
+body:JSON.stringify({
+
+action:"login",
+
+email,
+
+password
+
+})
+
+});
+
+const result=await response.json();
+
+if(result.success){
+
+localStorage.setItem("sessionToken",result.token);
+
+localStorage.setItem("studentName",result.fullName);
+
+localStorage.setItem("coins",result.coins);
+
+localStorage.setItem("role",result.role);
+
+message.innerHTML=
+
+"<div class='alert alert-success'>Login Successful...</div>";
+
+setTimeout(()=>{
+
+window.location.href="dashboard.html";
+
+},1500);
+
+}
+
+else{
+
+message.innerHTML=
+
+"<div class='alert alert-danger'>"+result.message+"</div>";
+
+}
+
+}
+
+catch(error){
+
+message.innerHTML=
+
+"<div class='alert alert-danger'>Server Connection Failed.</div>";
+
+}
+
+});
+
+}
